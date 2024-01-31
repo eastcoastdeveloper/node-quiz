@@ -235,6 +235,10 @@ main {
   width: 110px;
 }
 
+.full-width {
+  width: 100%;
+}
+
 .standard-button:hover {
   background-color: var(--yellow);
 }

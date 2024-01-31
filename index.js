@@ -83,7 +83,6 @@ app.post("/user", function (req, res) {
 
 app.post("/recordAnswer", function (req, res) {
   fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
-    //   console.log(req.body);
     const topic = req.body.topic;
     const questionIndex = parseInt(req.body.index);
     const chosenAnswer = req.body.chosenAnswer;
@@ -97,18 +96,5 @@ app.post("/recordAnswer", function (req, res) {
         };
       }
     }
-    console.log(results);
   });
 });
-
-// var userEntry = 5;
-
-// app.post("/nextQuestion", function (req, res) {
-//   // First read existing users.
-//   fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
-//     data = JSON.parse(userEntry);
-//     data["quiz"].results[0].userSelection = userEntry;
-//     console.log(data[quiz]);
-//     //    res.end( JSON.stringify(data));
-//   });
-// });

@@ -65,17 +65,19 @@
 
   // CONTINUE
   function beginQuiz() {
-    const emailInput = document.getElementById("emailInput");
-    const emailFormat = validateEmail(emailInput.value);
-    const wrapper = document.querySelector(".wrapper");
-    if (emailFormat) {
-      wrapper.classList.add("wrapper-fade");
-      setTimeout(() => {
-        postWelcomeDetails(emailInput.value);
-        emailInput.value = "";
-      }, 250);
-    } else {
-      // ERROR
+    if (menuSelection) {
+      const emailInput = document.getElementById("emailInput");
+      const emailFormat = validateEmail(emailInput.value);
+      const wrapper = document.querySelector(".wrapper");
+      if (emailFormat) {
+        wrapper.classList.add("wrapper-fade");
+        setTimeout(() => {
+          postWelcomeDetails(emailInput.value);
+          emailInput.value = "";
+        }, 250);
+      } else {
+        // ERROR
+      }
     }
   }
 

@@ -16,8 +16,6 @@ function nextQuestion() {
   index++;
   renderQuestions(data);
   recordAnswer();
-  //   console.log(index);
-  //     console.log(qTotal.innerText);
   if (index === qTotal.innerText - 1) {
     checkForLastQuestion();
   }
@@ -69,7 +67,6 @@ function beginQuiz() {
     })
     .then((arr) => {
       payload = arr;
-      console.log(payload);
       qTotal.innerText = payload.totalQuestions;
       topic = payload.topic;
       document.getElementById("topic-name").innerText = `${topic} Knowledge Test`;
@@ -78,7 +75,6 @@ function beginQuiz() {
 }
 
 function checkForLastQuestion() {
-  // console.log(next);
   next.innerText = "Finish";
 }
 
