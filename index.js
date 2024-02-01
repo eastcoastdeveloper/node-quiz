@@ -27,11 +27,6 @@ var server = app.listen(8081, function () {
 
 // REDIRECT TO WELCOME PAGE @ /
 app.get("/", (req, res) => {
-  res.redirect("/welcome");
-});
-
-// WELCOME
-app.get("/welcome", (req, res) => {
   const filePath = path.resolve(__dirname, "pages/welcome.html");
   res.sendFile(filePath);
 });
@@ -39,7 +34,7 @@ app.get("/welcome", (req, res) => {
 // QUIZ
 app.get("/quiz", (req, res) => {
   if (Object.keys(payload).length === 0) {
-    res.redirect("/welcome");
+    res.redirect("/");
   } else {
     const filePath = path.resolve(__dirname, "pages/quiz.html");
     res.sendFile(filePath);

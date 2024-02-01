@@ -18,7 +18,7 @@
     {
       "challenges": [
         {
-          "question": "This is the question",
+          "question": "What is the bind method used for?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -35,7 +35,7 @@
           ]
         },
         {
-          "question": "This is the question",
+          "question": "What is the call method used for?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -52,7 +52,7 @@
           ]
         },
         {
-          "question": "This is the question",
+          "question": "what is the apply method used for?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -300,7 +300,7 @@
       ]
     }
   ],
-  "U.S. History": [
+  "History": [
     {
       "totalQuestions": 10,
       "results": [
@@ -319,7 +319,7 @@
     {
       "challenges": [
         {
-          "question": "This is the question",
+          "question": "Which is true about the first Opium War?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -336,7 +336,7 @@
           ]
         },
         {
-          "question": "This is the question",
+          "question": "Where did Nazi uniforms come from?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -353,7 +353,41 @@
           ]
         },
         {
-          "question": "This is the question",
+          "question": "Who was Simón Bolívar?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
+        },
+        {
+          "question": "What popular ficticious character did JFK find so fascinating, he met with the author to devise real life plans to overthrow Castro?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
+        },
+        {
+          "question": "In regards to organized crime, what is a racket (racketeering)?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
