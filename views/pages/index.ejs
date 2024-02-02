@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
+  <main>
+    <div class="wrapper">
+        <div class="select-topic">
+          <p>Choose a Topic:</p>
+          <div class="dd-menu">
+            <div class="selector">
+              <span id="user-selection">Please Select</span>
+              <span class="caret">&#x25BA;</span>
+            </div>
+          </div>
+        </div>
+        <div class="send-results">
+          <p>Send My Results To:</p>
+          <div class="email-input">
+            <input id="emailInput" placeholder="Email address" type="text" />
+          </div>
+        </div>
+        <div id="continue">
+          <button type="button" class="standard-button full-width">Continue</button>
+        </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <script type="text/javascript" src="/js/home.js"></script>
+  </body>
+</html>

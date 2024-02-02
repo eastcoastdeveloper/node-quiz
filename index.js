@@ -10,6 +10,9 @@ let results = {};
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(bodyParser.json());
 
+// set the view engine to ejs
+app.set("view engine", "ejs");
+
 app.use(
   bodyParser.urlencoded({
     // to support URL-encoded bodies
@@ -25,10 +28,9 @@ var server = app.listen(8081, function () {
   console.log("Example app listening at", host, port);
 });
 
-// REDIRECT TO WELCOME PAGE @ /
-app.get("/", (req, res) => {
-  const filePath = path.resolve(__dirname, "pages/home.html");
-  res.sendFile(filePath);
+// HOME
+app.get("/", function (req, res) {
+  res.render("pages/index");
 });
 
 // QUIZ
@@ -36,16 +38,12 @@ app.get("/quiz", (req, res) => {
   if (Object.keys(payload).length === 0) {
     res.redirect("/");
   } else {
-    const filePath = path.resolve(__dirname, "pages/quiz.html");
-    res.sendFile(filePath);
+    res.render("pages/quiz");
   }
 });
 
 app.get("/congrats", (req, res) => {
-  console.log("end quiz");
-  console.log(req.body);
-  const filePath = path.resolve(__dirname, "pages/congrats.html");
-  res.sendFile(filePath);
+  res.render("pages/congrats");
 });
 
 // SEND DROPDOWN MENU ITEMS
@@ -105,8 +103,3 @@ app.post("/recordAnswer", function (req, res) {
     lastQuestion ? res.send({ message: "congrats" }) : res.send({ message: "recorded" });
   });
 });
-
-// app.post("/endQuiz", function (req, res) {
-//   console.log("DONE!!");
-//   res.send({ message: "done" });
-// });

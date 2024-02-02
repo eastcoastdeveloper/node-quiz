@@ -69,7 +69,6 @@ function renderQuestions(d) {
     qWrapper.appendChild(div);
   }
   const wrapper = document.querySelector(".quiz-wrapper");
-  wrapper.classList.remove("quiz-wrapper-fade");
 }
 
 // QUESTION CLICK HANDLER
@@ -99,7 +98,7 @@ function beginQuiz() {
       payload = arr;
       qTotal.innerText = payload.totalQuestions;
       topic = payload.topic;
-      document.getElementById("topic-name").innerText = `${topic} Knowledge Test`;
+      // document.getElementById("topic-name").innerText = `${topic} Knowledge Test`;
       renderQuestions(data);
     });
 }

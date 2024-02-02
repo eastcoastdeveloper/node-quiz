@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+    <main>
+      <div class="quiz-wrapper">
+        <div id="current-q"></div>
+        <div id="questions"></div>
+        <div class="q-controls">
+          <div class="q-number">
+            <span>Question</span>
+            <span id="q-index"></span>
+            <span>of</span>
+            <span id="totalNumber"></span>
+          </div>
+          <div class="q-navigation">
+            <button id="next" class="standard-button standard-button-inactive" type="button" disabled>Next Question</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer><%- include('../partials/footer'); %></footer>
+    <script type="text/javascript" src="/js/quiz.js"></script>
+  </body>
+</html>

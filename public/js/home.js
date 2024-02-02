@@ -70,11 +70,8 @@
       const emailFormat = validateEmail(emailInput.value);
       const wrapper = document.querySelector(".wrapper");
       if (emailFormat) {
-        wrapper.classList.add("wrapper-fade");
-        setTimeout(() => {
-          postWelcomeDetails(emailInput.value);
-          emailInput.value = "";
-        }, 250);
+        postWelcomeDetails(emailInput.value);
+        emailInput.value = "";
       } else {
         // ERROR
       }

@@ -183,11 +183,6 @@ main {
 .wrapper {
   margin: auto;
   width: 300px;
-  transition: opacity 0.15s;
-}
-
-.wrapper-fade {
-  opacity: 0;
 }
 
 .quiz-wrapper {
@@ -195,10 +190,6 @@ main {
   max-width: 900px;
   font-family: sans-serif;
   transition: opacity 0.15s;
-}
-
-.quiz-wrapper-fade {
-  opacity: 0;
 }
 
 .send-results {
