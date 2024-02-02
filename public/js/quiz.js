@@ -15,17 +15,17 @@ next.addEventListener("click", nextQuestion);
 // CHANGE Q INDEX, ADD NEW QUESTIONS, & RECORD ANSWER
 function nextQuestion() {
   if (selectedAnswer) {
-    selectedAnswer = null;
+    console.log(selectedAnswer);
+    index++;
     if (!lastQuestion) {
-      index++;
       renderQuestions(data);
     }
     recordAnswer();
-    if (index === qTotal.innerText - 1) {
-      checkForLastQuestion();
-    }
+    index === qTotal.innerText - 1 ? (next.innerText = "Finish") : "";
+
     next.setAttribute("disabled", "");
     next.classList.add("standard-button-inactive");
+    selectedAnswer = null;
   }
 }
 
@@ -37,14 +37,17 @@ async function recordAnswer() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ topic: topic, chosenAnswer: selectedAnswer, index: index - 1, lastQuestion: lastQuestion }),
+      body: JSON.stringify({ topic: topic, chosenAnswer: selectedAnswer, index: index - 1 }),
       cache: "default",
     })
       .then((data) => {
         return data.json();
       })
       .then((data) => {
-        data.message === "congrats" ? window.location.assign("/congrats") : "";
+        console.log(data);
+        // if (data.message === "done") {
+        //   window.location.assign("/results");
+        // }
       });
   } catch (error) {
     console.log(error);
@@ -66,7 +69,7 @@ function renderQuestions(d) {
     div.addEventListener("click", questionHandler);
     qWrapper.appendChild(div);
   }
-  const wrapper = document.querySelector(".quiz-wrapper");
+  // const wrapper = document.querySelector(".quiz-wrapper");
 }
 
 // QUESTION CLICK HANDLER
@@ -95,13 +98,8 @@ function beginQuiz() {
       payload = arr;
       qTotal.innerText = payload.totalQuestions;
       topic = payload.topic;
-      // document.getElementById("topic-name").innerText = `${topic} Knowledge Test`;
       renderQuestions(data);
     });
-}
-
-function checkForLastQuestion() {
-  next.innerText = "Finish";
 }
 
 beginQuiz();

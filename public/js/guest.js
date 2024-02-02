@@ -4,6 +4,7 @@
   const caret = document.querySelector(".caret");
   const continueBtn = document.getElementById("continue");
   let userSelection = document.getElementById("user-selection");
+  let notificationWrapper = document.getElementById("notification-wrapper");
   let menuValue = [];
   let menuSelection;
 
@@ -66,16 +67,33 @@
   // CONTINUE
   function beginQuiz() {
     if (menuSelection) {
+      const notification = document.querySelector(".notification-wrapper");
+      notification ? document.querySelector("main").removeChild(notification) : "";
+
       const emailInput = document.getElementById("emailInput");
       const emailFormat = validateEmail(emailInput.value);
-      const wrapper = document.querySelector(".wrapper");
       if (emailFormat) {
         postWelcomeDetails(emailInput.value);
         emailInput.value = "";
       } else {
-        // ERROR
+        createNotification("Please enter a valid email.");
       }
+    } else {
+      createNotification("Please select a topic.");
     }
+  }
+
+  // CREATE NOTIFICATION
+  function createNotification(message) {
+    const notificationWrapper = document.createElement("div");
+    const txt = document.createElement("span");
+    notificationWrapper.classList.add("notification-wrapper");
+    txt.innerText = message;
+    notificationWrapper.appendChild(txt);
+    document.querySelector("main").appendChild(notificationWrapper);
+    setTimeout(() => {
+      notificationWrapper.classList.add("toggle-notification");
+    });
   }
 
   // POST TOPIC & EMAIL

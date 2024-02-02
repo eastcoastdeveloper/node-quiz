@@ -1,3 +1,19 @@
+.notification-wrapper {
+  position: absolute;
+  padding: 18px;
+  background-color: var(--red);
+  font: normal 15px sans-serif;
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+  transition: top 0.15s;
+  top: -60px;
+}
+
+.toggle-notification {
+  top: 0 !important;
+}
+
 .caret {
   transition: all 0.15s;
   float: right;

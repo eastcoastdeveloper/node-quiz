@@ -2,7 +2,7 @@
   "JavaScript": [
     {
       "totalQuestions": 10,
-      "results": [
+      "answers": [
         { "correct": 1 },
         { "correct": 1 },
         { "correct": 1 },
@@ -21,16 +21,16 @@
           "question": "What is the bind method used for?",
           "answers": [
             {
-              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+              "item": "The bind method is used to connect multiple strings together. Otherwise known as concatenation."
+            },
+            {
+              "item": "The bind method is used in frameworks to update one way template binding."
             },
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
             },
             {
-              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
-            },
-            {
-              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+              "item": "Bind is used to execute a function after an asyncronous operation occurs."
             }
           ]
         },
@@ -108,7 +108,7 @@
   "TypeScript": [
     {
       "totalQuestions": 10,
-      "results": [
+      "answers": [
         { "correct": 1 },
         { "correct": 1 },
         { "correct": 1 },
@@ -180,12 +180,12 @@
   "Web Technologies": [
     {
       "totalQuestions": 7,
-      "results": [
+      "answers": [
         { "correct": 1 },
         { "correct": 2 },
-        { "correct": 3 },
-        { "correct": 4 },
-        { "correct": 1 },
+        { "correct": 2 },
+        { "correct": 2 },
+        { "correct": 2 },
         { "correct": 1 },
         { "correct": 1 },
         { "correct": 1 },
@@ -337,7 +337,7 @@
   "The Internet": [
     {
       "totalQuestions": 7,
-      "results": [
+      "answers": [
         { "correct": 1 },
         { "correct": 2 },
         { "correct": 3 },
@@ -494,7 +494,7 @@
   "History": [
     {
       "totalQuestions": 10,
-      "results": [
+      "answers": [
         { "correct": 1 },
         { "correct": 1 },
         { "correct": 1 },

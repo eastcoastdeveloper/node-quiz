@@ -52,9 +52,9 @@ app.get("/quiz", (req, res) => {
   }
 });
 
-// CONGRATS
-app.get("/congrats", (req, res) => {
-  res.render("pages/congrats");
+// RESULTS
+app.get("/results", (req, res) => {
+  res.render("pages/results");
 });
 
 // SEND DROPDOWN MENU ITEMS
@@ -98,20 +98,34 @@ app.post("/recordAnswer", function (req, res) {
   fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
     const topic = req.body.topic;
     const questionIndex = parseInt(req.body.index);
-    const lastQuestion = req.body.lastQuestion;
-    const chosenAnswer = req.body.chosenAnswer;
+    const chosenAnswer = parseInt(req.body.chosenAnswer) + 1;
+
     for (let x of Object.keys(JSON.parse(data))) {
       if (x === topic) {
-        const correctAnswer = JSON.parse(data)[x][0].results[questionIndex].correct;
-        results.topic = topic;
+        const correctAnswer = JSON.parse(data)[x][0].answers[questionIndex].correct;
+        const totalNumber = JSON.parse(data)[x][0].totalQuestions;
+
+        // results.topic = topic;
         results[questionIndex] = {
           correctAnswer: correctAnswer,
           chosenAnswer: chosenAnswer,
-          lastQuestion: lastQuestion,
+          outcome: correctAnswer === chosenAnswer ? "correct" : "incorrect",
         };
+
+        // Calculate Score
+        if (totalNumber === Object.values(results).length) {
+          let numCorrect = 0;
+          for (let i = 0; i < Object.values(results).length; i++) {
+            if (Object.values(results)[i].outcome === "correct") {
+              numCorrect++;
+            }
+          }
+          let score = `${Math.round((numCorrect / totalNumber) * 100)}%`;
+          console.log(score);
+        }
       }
     }
-    // console.log(results);
-    lastQuestion ? res.send({ message: "congrats" }) : res.send({ message: "recorded" });
+
+    res.send({ message: results });
   });
 });

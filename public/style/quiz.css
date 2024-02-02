@@ -1,0 +1,65 @@
+#current-q {
+  text-align: center;
+  color: var(--darkgrey);
+  font-size: 20px;
+  margin: 40px 0;
+}
+
+.q-controls {
+  position: relative;
+  margin: 20px auto;
+  max-width: 90%;
+  overflow: auto;
+}
+
+.q-navigation {
+  float: right;
+}
+
+.q-number {
+  transform: translateY(-50%);
+  position: absolute;
+  font-size: 14px;
+  top: 50%;
+}
+
+#questions {
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  display: grid;
+  grid-gap: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+#questions > div {
+  border: 1px solid var(--darkgrey);
+  font-size: 16px;
+  line-height: 22px;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+#questions > div span {
+  margin: auto;
+}
+
+.quiz-wrapper {
+  margin: auto;
+  max-width: 900px;
+  font-family: sans-serif;
+  transition: opacity 0.15s;
+}
+
+.selected-q {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+@media screen and (max-width: 650px) {
+  #questions {
+    grid-template-columns: none;
+  }
+}
