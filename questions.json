@@ -124,7 +124,7 @@
     {
       "challenges": [
         {
-          "question": "This is the question",
+          "question": "What are enums used for?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -141,7 +141,7 @@
           ]
         },
         {
-          "question": "This is the question",
+          "question": "Describe an interface.",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -158,7 +158,7 @@
           ]
         },
         {
-          "question": "This is the question",
+          "question": "The '?' (undefined) is an addition to JavaScript, or does JavaScript have this feature too?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -316,6 +316,163 @@
         },
         {
           "question": "What is cornerstone content in relation to SEO?",
+          "answers": [
+            {
+              "item": "Cornerstone content is the idea of creating rich, 3,000+ word blog posts on a regular basis. Portraying the page as being an expert resource."
+            },
+            {
+              "item": "Cornerstone content is the idea of creating one page that has lots of related topics. Then linking those topics back to the cornerstone page."
+            },
+            {
+              "item": "Cornerstone content is the idea of composing a page with numerous external links to the industry's most reputable resources."
+            },
+            {
+              "item": "Cornerstone content is the idea linking to as many internal pages as possible. This linking structure serves as a visual map of pages."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "The Internet": [
+    {
+      "totalQuestions": 7,
+      "results": [
+        { "correct": 1 },
+        { "correct": 2 },
+        { "correct": 3 },
+        { "correct": 4 },
+        { "correct": 1 },
+        { "correct": 1 },
+        { "correct": 1 },
+        { "correct": 1 },
+        { "correct": 1 },
+        { "correct": 1 }
+      ]
+    },
+    {
+      "challenges": [
+        {
+          "question": "What is a proxy?",
+          "answers": [
+            {
+              "item": "Provide the web page with interactive experiences."
+            },
+            {
+              "item": "Style the web page."
+            },
+            {
+              "item": "Enhance accessibility for those who are impaired."
+            },
+            {
+              "item": "Cache data such as an email address so browsers can prepopulate them in pages with similar form fields."
+            }
+          ]
+        },
+        {
+          "question": "Explain a dictionary attack.",
+          "answers": [
+            {
+              "item": "Express.js is a framework that's among the most popular for Node.js."
+            },
+            {
+              "item": "A framework created by Facebook to enhance frontend speed and performance."
+            },
+            {
+              "item": "A tool used to compete with Next.js."
+            },
+            {
+              "item": "One of the most popular ways to ensure browser compatibility."
+            }
+          ]
+        },
+        {
+          "question": "What is DNS Spoofing?",
+          "answers": [
+            {
+              "item": "Angular uses TypeScript while AngularJS uses JavaScript. Both of which dominate the industry. "
+            },
+            {
+              "item": "AngularJS was a thriving framework from 2010 to circa 2020. Angular has taken it's place as one of the most powerful, modern frontend frameworks."
+            },
+            {
+              "item": "AngularJS is about as popular as Vue.js according to a recent survey. Angular competes moreso with React."
+            },
+            {
+              "item": "If a company is seeking an AngularJS developer, they have a modern architecture. Such as a monolithic application."
+            }
+          ]
+        },
+        {
+          "question": "What is an Evil Twin (cybersecurity)?",
+          "answers": [
+            {
+              "item": "SQL databases do not adhere to a format and therefore each record can be different. NoSQL databases are table based."
+            },
+            {
+              "item": "SQL databases are relational while NoSQL databases are non-relational."
+            },
+            {
+              "item": "SQL databases are far more flexible while NoSQL databases are not nearly as scalable."
+            },
+            {
+              "item": "Both database styles work well with XML."
+            }
+          ]
+        },
+        {
+          "question": "what is a keylogger?",
+          "answers": [
+            {
+              "item": "C# and .NET are the same thing."
+            },
+            {
+              "item": "C# is often times compared to Python. Though the two have differences, they can be hailed as tools for similar applications."
+            },
+            {
+              "item": "C# has roots in the C family and will therefore be familiar to C, C++, Java, and JavaScript developers."
+            },
+            {
+              "item": "Answers two and three are correct."
+            }
+          ]
+        },
+        {
+          "question": "Which one of the following is an accurate description of Denial of Service?",
+          "answers": [
+            {
+              "item": "Tokens are related to caching browser data. Enhancing users' experience;"
+            },
+            {
+              "item": "Tokens are resources to help websites gather crucial information such as fingerprinting and location."
+            },
+            {
+              "item": "Tokens are used as a security protocol to ensure they're automatically signed out after a specified amount of time. Or when a user navigates away from the tab."
+            },
+            {
+              "item": "Tokens are often times obtained from an authorization server, enabling users to access resources otherwise restricted."
+            }
+          ]
+        },
+        {
+          "question": "Hacking: What is a Man in the Middle attack?",
+          "answers": [
+            {
+              "item": "Device fingerprinting is illegal and very difficult to discern. In turn, many companies are able to get away with it."
+            },
+            {
+              "item": "Fingerprinting is when different technologies track us both on and offline. Regardless of preferences."
+            },
+            {
+              "item": "Device fingerprinting is when a website or app captures the hardware serial number or similar identifiable characteristics about a user."
+            },
+            {
+              "item": "Fingerprinting is used strictly for political and security reasons. It's unrelated to advertising or general web surfing."
+            }
+          ]
+        },
+        {
+          "question": "What is a brute force attack?",
           "answers": [
             {
               "item": "Cornerstone content is the idea of creating rich, 3,000+ word blog posts on a regular basis. Portraying the page as being an expert resource."

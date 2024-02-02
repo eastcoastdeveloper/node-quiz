@@ -134,6 +134,11 @@ table {
   --darkgrey: #333333;
 }
 
+.continue-guest {
+  text-align: center;
+  margin-top: 20px;
+}
+
 html,
 body {
   height: 100%;
@@ -169,6 +174,18 @@ header {
   font: normal 20px sans-serif;
 }
 
+.login-credentials .email-field {
+  /* color: var(--darkgrey);
+  font: normal 15px sans-serif; */
+  margin-bottom: 20px;
+  padding: 0 10px;
+  /* display: block; */
+}
+
+.login-credentials .password-field {
+  padding: 0 10px;
+}
+
 .max-width-wrapper {
   max-width: 1400px;
   margin: 0 auto;
@@ -196,14 +213,33 @@ main {
   margin-top: 20px;
 }
 
-.send-results p,
+.login-credentials {
+  border: 1px solid var(--darkgrey);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.login-credentials p {
+  background-color: var(--blue);
+  border-bottom: 1px solid var(--darkgrey);
+  text-align: center;
+  padding: 5px;
+  color: var(--white);
+  font: normal 18px sans-serif;
+  margin-bottom: 20px;
+}
+
+.send-results label,
+.continue-guest label,
 .select-topic p {
   color: var(--darkgrey);
   font: normal 15px sans-serif;
   margin-bottom: 5px;
+  display: block;
 }
 
-.send-results input {
+.send-results input,
+.login-credentials #emailInput {
   font: normal 15px sans-serif;
   border: 1px solid var(--darkgrey);
   border-radius: 4px;
@@ -242,6 +278,11 @@ main {
 
 #continue {
   margin-top: 20px;
+}
+
+#login {
+  margin: 20px 0;
+  padding: 0 10px;
 }
 
 /* QUIZ */

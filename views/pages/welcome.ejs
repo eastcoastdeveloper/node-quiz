@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
+  <main>
+    <div class="wrapper">
+        <div class="login-credentials">
+            <p>Login</p>
+          <div class="email-field">
+            <input id="emailInput" placeholder="Email address" type="text" />
+          </div>
+          <div class="password-field">
+            <input id="emailInput" placeholder="Password" type="text" />
+          </div>
+          <div id="login">
+              <button type="button" class="standard-button full-width">Continue</button>
+            </div>
+        </div>
+
+        <div class="continue-guest">
+            <label>&mdash;Or&mdash;</label>
+            <button type="button" class="standard-button full-width">Continue as a Guest</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <!-- <script type="text/javascript" src="/js/home.js"></script> -->
+  </body>
+</html>

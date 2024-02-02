@@ -31,7 +31,6 @@ function nextQuestion() {
 
 // RECORD ANSWERS
 async function recordAnswer() {
-  console.log(lastQuestion);
   try {
     await fetch(`http://localhost:8081/recordAnswer`, {
       method: "POST",
@@ -45,8 +44,7 @@ async function recordAnswer() {
         return data.json();
       })
       .then((data) => {
-        console.log(data.message);
-        data.message === "congrats" ? window.location.assign("/congrats") : console.log("keep going");
+        data.message === "congrats" ? window.location.assign("/congrats") : "";
       });
   } catch (error) {
     console.log(error);
@@ -84,7 +82,6 @@ function questionHandler(e) {
 
   if (next.innerText === "Finish") {
     lastQuestion = true;
-    console.log("last question!!");
   }
 }
 

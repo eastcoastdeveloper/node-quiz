@@ -30,7 +30,17 @@ var server = app.listen(8081, function () {
 
 // HOME
 app.get("/", function (req, res) {
-  res.render("pages/index");
+  res.redirect("/welcome");
+});
+
+// WELCOME
+app.get("/welcome", function (req, res) {
+  res.render("pages/welcome");
+});
+
+// WELCOME
+app.get("/guest", function (req, res) {
+  res.render("pages/guest");
 });
 
 // QUIZ
@@ -42,6 +52,7 @@ app.get("/quiz", (req, res) => {
   }
 });
 
+// CONGRATS
 app.get("/congrats", (req, res) => {
   res.render("pages/congrats");
 });
@@ -58,6 +69,7 @@ app.get("/getMenuItems", function (req, res) {
   });
 });
 
+// ??
 app.get("/beginQuiz", function (req, res) {
   res.send(payload);
 });
@@ -81,12 +93,12 @@ app.post("/user", function (req, res) {
   });
 });
 
+// RECORD ANSWER
 app.post("/recordAnswer", function (req, res) {
   fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
     const topic = req.body.topic;
     const questionIndex = parseInt(req.body.index);
     const lastQuestion = req.body.lastQuestion;
-    console.log(lastQuestion);
     const chosenAnswer = req.body.chosenAnswer;
     for (let x of Object.keys(JSON.parse(data))) {
       if (x === topic) {
