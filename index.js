@@ -112,16 +112,8 @@ app.post("/recordAnswer", function (req, res) {
           outcome: correctAnswer === chosenAnswer ? "correct" : "incorrect",
         };
 
-        // Calculate Score
         if (totalNumber === Object.values(results).length) {
-          let numCorrect = 0;
-          for (let i = 0; i < Object.values(results).length; i++) {
-            if (Object.values(results)[i].outcome === "correct") {
-              numCorrect++;
-            }
-          }
-          let score = `${Math.round((numCorrect / totalNumber) * 100)}%`;
-          console.log(score);
+          calculateScore(results, totalNumber);
         }
       }
     }
@@ -129,3 +121,16 @@ app.post("/recordAnswer", function (req, res) {
     res.send({ message: results });
   });
 });
+
+// Calculate Score
+function calculateScore(results, totalNumber) {
+  let numCorrect = 0;
+  for (let i = 0; i < Object.values(results).length; i++) {
+    if (Object.values(results)[i].outcome === "correct") {
+      numCorrect++;
+    }
+  }
+  let score = `${Math.round((numCorrect / totalNumber) * 100)}%`;
+  console.log(score);
+  return score;
+}
