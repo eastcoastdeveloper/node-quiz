@@ -95,7 +95,7 @@
     });
   }
 
-  //
+  // POPULATE DROP DOWN MENU
   async function getMenuItems() {
     await fetch(`http://localhost:8081/getMenuItems`)
       .then((data) => {

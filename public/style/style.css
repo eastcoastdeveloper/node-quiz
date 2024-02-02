@@ -243,6 +243,12 @@ main {
   background-color: var(--yellow);
 }
 
+.standard-button-inactive {
+  pointer-events: none;
+  background-color: lightgray;
+  opacity: 0.5;
+}
+
 #continue {
   margin-top: 20px;
 }
@@ -299,4 +305,10 @@ main {
 .selected-q {
   background-color: var(--blue);
   color: var(--white);
+}
+
+@media screen and (max-width: 650px) {
+  #questions {
+    grid-template-columns: none;
+  }
 }

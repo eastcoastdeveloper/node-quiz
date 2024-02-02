@@ -27,7 +27,7 @@ var server = app.listen(8081, function () {
 
 // REDIRECT TO WELCOME PAGE @ /
 app.get("/", (req, res) => {
-  const filePath = path.resolve(__dirname, "pages/welcome.html");
+  const filePath = path.resolve(__dirname, "pages/home.html");
   res.sendFile(filePath);
 });
 
@@ -39,6 +39,13 @@ app.get("/quiz", (req, res) => {
     const filePath = path.resolve(__dirname, "pages/quiz.html");
     res.sendFile(filePath);
   }
+});
+
+app.get("/congrats", (req, res) => {
+  console.log("end quiz");
+  console.log(req.body);
+  const filePath = path.resolve(__dirname, "pages/congrats.html");
+  res.sendFile(filePath);
 });
 
 // SEND DROPDOWN MENU ITEMS
@@ -80,6 +87,8 @@ app.post("/recordAnswer", function (req, res) {
   fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
     const topic = req.body.topic;
     const questionIndex = parseInt(req.body.index);
+    const lastQuestion = req.body.lastQuestion;
+    console.log(lastQuestion);
     const chosenAnswer = req.body.chosenAnswer;
     for (let x of Object.keys(JSON.parse(data))) {
       if (x === topic) {
@@ -88,8 +97,16 @@ app.post("/recordAnswer", function (req, res) {
         results[questionIndex] = {
           correctAnswer: correctAnswer,
           chosenAnswer: chosenAnswer,
+          lastQuestion: lastQuestion,
         };
       }
     }
+    // console.log(results);
+    lastQuestion ? res.send({ message: "congrats" }) : res.send({ message: "recorded" });
   });
 });
+
+// app.post("/endQuiz", function (req, res) {
+//   console.log("DONE!!");
+//   res.send({ message: "done" });
+// });

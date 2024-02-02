@@ -67,6 +67,40 @@
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
             }
           ]
+        },
+        {
+          "question": "What do generators do?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
+        },
+        {
+          "question": "How do you inherit a class?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
         }
       ]
     }
@@ -370,7 +404,7 @@
           ]
         },
         {
-          "question": "What popular ficticious character did JFK find so fascinating, he met with the author to devise real life plans to overthrow Castro?",
+          "question": "What popular ficticious story character did JFK find so fascinating, he met with the author to create real life plans to overthrow Castro?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
@@ -388,6 +422,74 @@
         },
         {
           "question": "In regards to organized crime, what is a racket (racketeering)?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
+        },
+        {
+          "question": "What was the Iran Contra Affair?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
+        },
+        {
+          "question": "Who was Manuel Noriega?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
+        },
+        {
+          "question": "What notorious criminal was on the Forbes richest people list?",
+          "answers": [
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ]
+        },
+        {
+          "question": "Who was Enron and what did they do?",
           "answers": [
             {
               "item": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
