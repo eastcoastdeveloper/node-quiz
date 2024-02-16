@@ -1,14 +1,22 @@
 var express = require("express");
 var app = express();
-var fs = require("fs");
-const path = require("path");
+const cookieParser = require("cookie-parser");
+const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-let payload = {};
-let results = {};
 
-app.use(express.static(path.join(__dirname, "/public")));
+// ROUTE PATHS
+const basePath = require("./routes/base-path");
+const loginRoute = require("./routes/login");
+const processLogin = require("./routes/process-login");
+const logout = require("./routes/logout");
+const welcome = require("./routes/welcome");
+const guest = require("./routes/guest");
+
+app.use(express.static("public"));
 app.use(bodyParser.json());
+app.use(helmet());
+app.use(express.json());
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -20,6 +28,22 @@ app.use(
   })
 );
 app.use(cors());
+app.use(cookieParser());
+
+// CHECK FOR PARAM THAT'S PRESENT ON ANY ROUTE ON INITIAL LOAD
+// app.param("attempts", (req, res, next, attempts) => {
+//   console.log("message param is present");
+//   next();
+// });
+
+app.use((req, res, next) => {
+  if (req.query.message === "fail") {
+    res.locals.message = "Username or password are incorrect or do not exist. Please try again.";
+  } else {
+    res.locals.message = "";
+  }
+  next();
+});
 
 // SERVER
 var server = app.listen(8081, function () {
@@ -28,109 +52,29 @@ var server = app.listen(8081, function () {
   console.log("Example app listening at", host, port);
 });
 
-// HOME
-app.get("/", function (req, res) {
-  res.redirect("/welcome");
-});
+// ROUTER
+app.use("/", basePath);
+app.use("/login", loginRoute);
+app.use("/process-login", processLogin);
+app.use("/logout", logout);
+app.use("/welcome", welcome);
+app.use("/guest", guest);
 
-// WELCOME
-app.get("/welcome", function (req, res) {
-  res.render("pages/welcome");
-});
+// USER LOGIN
+// app.post("/process_login", (req, res, next) => {
+//   const email = req.body.email;
+//   const password = req.body.password;
 
-// WELCOME
-app.get("/guest", function (req, res) {
-  res.render("pages/guest");
-});
+//   if (password != "") {
+//     res.cookie("email", email);
+//     res.redirect("/welcome");
+//   } else {
+//     res.redirect("/login/:attempt=1");
+//   }
+// });
 
-// QUIZ
-app.get("/quiz", (req, res) => {
-  if (Object.keys(payload).length === 0) {
-    res.redirect("/");
-  } else {
-    res.render("pages/quiz");
-  }
-});
-
-// RESULTS
-app.get("/results", (req, res) => {
-  res.render("pages/results");
-});
-
-// SEND DROPDOWN MENU ITEMS
-app.get("/getMenuItems", function (req, res) {
-  fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
-    let arr = [];
-    const d = JSON.parse(data);
-    for (let key in d) {
-      arr.push({ value: key });
-    }
-    res.send(JSON.stringify(arr));
-  });
-});
-
-// ??
-app.get("/beginQuiz", function (req, res) {
-  res.send(payload);
-});
-
-// OBTAIN EMAIL & CREATE QUIZ PAYLOAD
-app.post("/user", function (req, res) {
-  const menuSelection = req.body.topic;
-  fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
-    // const email = req.body.email;
-    const results = JSON.parse(data);
-    for (let x of Object.keys(results)) {
-      if (x === menuSelection) {
-        let totalQuestions = results[x][0].totalQuestions;
-        let questions = results[x][1];
-        payload.totalQuestions = totalQuestions;
-        payload.questions = questions;
-        payload.topic = menuSelection;
-        res.end();
-      }
-    }
-  });
-});
-
-// RECORD ANSWER
-app.post("/recordAnswer", function (req, res) {
-  fs.readFile(__dirname + "/" + "questions.json", "utf8", function (err, data) {
-    const topic = req.body.topic;
-    const questionIndex = parseInt(req.body.index);
-    const chosenAnswer = parseInt(req.body.chosenAnswer) + 1;
-
-    for (let x of Object.keys(JSON.parse(data))) {
-      if (x === topic) {
-        const correctAnswer = JSON.parse(data)[x][0].answers[questionIndex].correct;
-        const totalNumber = JSON.parse(data)[x][0].totalQuestions;
-
-        // results.topic = topic;
-        results[questionIndex] = {
-          correctAnswer: correctAnswer,
-          chosenAnswer: chosenAnswer,
-          outcome: correctAnswer === chosenAnswer ? "correct" : "incorrect",
-        };
-
-        if (totalNumber === Object.values(results).length) {
-          calculateScore(results, totalNumber);
-        }
-      }
-    }
-
-    res.send({ message: results });
-  });
-});
-
-// Calculate Score
-function calculateScore(results, totalNumber) {
-  let numCorrect = 0;
-  for (let i = 0; i < Object.values(results).length; i++) {
-    if (Object.values(results)[i].outcome === "correct") {
-      numCorrect++;
-    }
-  }
-  let score = `${Math.round((numCorrect / totalNumber) * 100)}%`;
-  console.log(score);
-  return score;
-}
+// LOGOUT
+// app.get("/logout", (req, res, next) => {
+//   res.clearCookie("email");
+//   res.redirect("/login");
+// });

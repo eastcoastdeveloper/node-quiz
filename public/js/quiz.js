@@ -15,39 +15,37 @@ next.addEventListener("click", nextQuestion);
 // CHANGE Q INDEX, ADD NEW QUESTIONS, & RECORD ANSWER
 function nextQuestion() {
   if (selectedAnswer) {
-    console.log(selectedAnswer);
     index++;
     if (!lastQuestion) {
       renderQuestions(data);
     }
-    recordAnswer();
+    recordAnswer(lastQuestion);
     index === qTotal.innerText - 1 ? (next.innerText = "Finish") : "";
 
     next.setAttribute("disabled", "");
-    next.classList.add("standard-button-inactive");
+    next.classList.add("button-inactive");
     selectedAnswer = null;
   }
 }
 
 // RECORD ANSWERS
-async function recordAnswer() {
+async function recordAnswer(finalQuestion) {
   try {
-    await fetch(`http://localhost:8081/recordAnswer`, {
+    await fetch(`http://localhost:8081/guest/recordAnswer`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ topic: topic, chosenAnswer: selectedAnswer, index: index - 1 }),
+      body: JSON.stringify({ topic: topic, chosenAnswer: selectedAnswer, index: index - 1, finalQuestion: finalQuestion }),
       cache: "default",
     })
       .then((data) => {
         return data.json();
       })
       .then((data) => {
-        console.log(data);
-        // if (data.message === "done") {
-        //   window.location.assign("/results");
-        // }
+        if (data.message === "redirect") {
+          window.location.assign("/guest/results");
+        }
       });
   } catch (error) {
     console.log(error);
@@ -75,7 +73,7 @@ function renderQuestions(d) {
 // QUESTION CLICK HANDLER
 function questionHandler(e) {
   next.removeAttribute("disabled");
-  next.classList.remove("standard-button-inactive");
+  next.classList.remove("button-inactive");
   const selectedQuestions = Array.from(document.querySelectorAll(".selected-q"));
   for (var i = 0; i < selectedQuestions.length; i++) {
     selectedQuestions[i].classList.remove("selected-q");
@@ -90,7 +88,7 @@ function questionHandler(e) {
 
 // BEGIN QUIZ
 function beginQuiz() {
-  fetch(`http://localhost:8081/beginQuiz`)
+  fetch(`http://localhost:8081/guest/beginQuiz`)
     .then((data) => {
       return data.json();
     })

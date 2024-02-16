@@ -73,7 +73,7 @@
       const emailInput = document.getElementById("emailInput");
       const emailFormat = validateEmail(emailInput.value);
       if (emailFormat) {
-        postWelcomeDetails(emailInput.value);
+        guestUserInitialization(emailInput.value);
         emailInput.value = "";
       } else {
         createNotification("Please enter a valid email.");
@@ -96,23 +96,23 @@
     });
   }
 
-  // POST TOPIC & EMAIL
-  async function postWelcomeDetails(emailValue) {
-    await fetch(`http://localhost:8081/user`, {
+  // POST MENU SELECTION & EMAIL
+  async function guestUserInitialization(emailValue) {
+    await fetch(`http://localhost:8081/guest/create-quiz`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ topic: menuSelection, email: emailValue }),
       cache: "default",
-    }).then(() => {
-      window.location.assign("/quiz");
+    }).then((data) => {
+      window.location.assign("/guest/quiz");
     });
   }
 
   // POPULATE DROP DOWN MENU
   async function getMenuItems() {
-    await fetch(`http://localhost:8081/getMenuItems`)
+    await fetch(`http://localhost:8081/guest/populateMenu`)
       .then((data) => {
         return data.json();
       })
