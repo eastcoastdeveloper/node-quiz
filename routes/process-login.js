@@ -4,6 +4,8 @@ const router = express.Router();
 router.post("/", (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
+  console.log(email);
+  console.log(password);
 
   if (password != "") {
     res.cookie("email", email);
