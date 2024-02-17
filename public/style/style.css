@@ -139,7 +139,8 @@ main {
 }
 
 .send-results input,
-.login-credentials #emailInput {
+.login-credentials #emailInput,
+.login-credentials #password {
   font: normal 15px sans-serif;
   border: 1px solid var(--darkgrey);
   border-radius: 4px;

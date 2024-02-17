@@ -8,7 +8,6 @@ const cors = require("cors");
 // ROUTE PATHS
 const basePath = require("./routes/base-path");
 const loginRoute = require("./routes/login");
-const processLogin = require("./routes/process-login");
 const logout = require("./routes/logout");
 const welcome = require("./routes/welcome");
 const guest = require("./routes/guest");
@@ -55,7 +54,6 @@ var server = app.listen(8081, function () {
 // ROUTER
 app.use("/", basePath);
 app.use("/login", loginRoute);
-app.use("/process-login", processLogin);
 app.use("/logout", logout);
 app.use("/welcome", welcome);
 app.use("/guest", guest);

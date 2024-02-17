@@ -1,10 +1,11 @@
+import { createNotification, validateEmail } from "../modules/global-functions.js";
+
 (() => {
   // GET DATA FROM API
   const ddMenu = document.querySelector(".selector");
   const caret = document.querySelector(".caret");
   const continueBtn = document.getElementById("continue");
   let userSelection = document.getElementById("user-selection");
-  let notificationWrapper = document.getElementById("notification-wrapper");
   let menuValue = [];
   let menuSelection;
 
@@ -58,12 +59,6 @@
     arr[1].remove();
   }
 
-  // VALIDATE EMAIL
-  function validateEmail(email) {
-    var regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    return regex.test(email);
-  }
-
   // CONTINUE
   function beginQuiz() {
     if (menuSelection) {
@@ -83,19 +78,6 @@
     }
   }
 
-  // CREATE NOTIFICATION
-  function createNotification(message) {
-    const notificationWrapper = document.createElement("div");
-    const txt = document.createElement("span");
-    notificationWrapper.classList.add("notification-wrapper");
-    txt.innerText = message;
-    notificationWrapper.appendChild(txt);
-    document.querySelector("main").appendChild(notificationWrapper);
-    setTimeout(() => {
-      notificationWrapper.classList.add("toggle-notification");
-    });
-  }
-
   // POST MENU SELECTION & EMAIL
   async function guestUserInitialization(emailValue) {
     await fetch(`http://localhost:8081/guest/create-quiz`, {
@@ -105,8 +87,8 @@
       },
       body: JSON.stringify({ topic: menuSelection, email: emailValue }),
       cache: "default",
-    }).then((data) => {
-      window.location.assign("/guest/quiz");
+    }).then((response) => {
+      response.ok ? window.location.assign("/guest/quiz") : createNotification("Something went wrong on our end.");
     });
   }
 

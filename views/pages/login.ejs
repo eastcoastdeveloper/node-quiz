@@ -14,20 +14,20 @@
       <p>10 randomly selected questions.<br>Track your progress in a profile, or get the results emailed to you. New questions added regularly!</p>
      </div>
      <p><%- message %></p>
-        <form action="/process-login" method="post">
+        <!-- <form> -->
           <div class="login-credentials">
             <p>Login</p>
           <div class="email-field">
             <input id="emailInput" placeholder="Email address" type="text" name="email"/>
           </div>
           <div class="password-field">
-            <input id="emailInput" placeholder="Password" type="text" name="password" />
+            <input id="password" placeholder="Password" type="text" name="password" />
           </div>
           <div class="login-btn">
               <button type="submit" class="large-button base-button full-width">Continue</button>
             </div>
         </div>
-        </form>
+        <!-- </form> -->
 
         <div class="continue-guest">
             <label>&mdash;Or&mdash;</label>
@@ -39,6 +39,6 @@
     <footer>
       <%- include('../partials/footer'); %>
     </footer>
-    <script type="text/javascript" src="/js/login.js"></script>
+    <script type="module" src="/js/login.js"></script>
   </body>
 </html>

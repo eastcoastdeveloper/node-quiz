@@ -29,6 +29,7 @@ function nextQuestion() {
 }
 
 // RECORD ANSWERS
+// ERROR HANDLING NEEDED HERE
 async function recordAnswer(finalQuestion) {
   try {
     await fetch(`http://localhost:8081/guest/recordAnswer`, {
@@ -67,7 +68,6 @@ function renderQuestions(d) {
     div.addEventListener("click", questionHandler);
     qWrapper.appendChild(div);
   }
-  // const wrapper = document.querySelector(".quiz-wrapper");
 }
 
 // QUESTION CLICK HANDLER

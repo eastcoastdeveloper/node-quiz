@@ -17,6 +17,7 @@ router.get("/config", function (req, res, next) {
 
 router.post("/create-quiz", function (req, res) {
   const menuSelection = req.body.topic;
+  // res.sendStatus(500);
   const data = fs.readFileSync(path.resolve(__dirname, "../questions.json"));
   const results = JSON.parse(data);
   for (let x of Object.keys(results)) {
@@ -34,6 +35,8 @@ router.post("/create-quiz", function (req, res) {
 // RECORD ANSWERS
 router.post("/recordAnswer", function (req, res) {
   const lastQuestion = req.body.finalQuestion;
+
+  // ERROR HANDLING NEEDED HERE
   const data = fs.readFileSync(path.resolve(__dirname, "../questions.json"));
 
   const topic = req.body.topic;
@@ -74,6 +77,7 @@ function calculateScore(results, totalNumber) {
 }
 
 // POPULATE DROPDOWN MENU
+// ERROR HANDLING NEED HERE
 router.get("/populateMenu", function (req, res) {
   const data = fs.readFileSync(path.resolve(__dirname, "../questions.json"));
   let arr = [];
