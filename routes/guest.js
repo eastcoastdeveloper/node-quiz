@@ -16,17 +16,18 @@ router.get("/config", function (req, res, next) {
 });
 
 router.post("/create-quiz", function (req, res) {
-  const menuSelection = req.body.topic;
-  // res.sendStatus(500);
+  console.log(req.body);
+  // console.log(res.locals.someValue);
+  const { topic } = req.body;
   const data = fs.readFileSync(path.resolve(__dirname, "../questions.json"));
   const results = JSON.parse(data);
   for (let x of Object.keys(results)) {
-    if (x === menuSelection) {
+    if (x === topic) {
       let totalQuestions = results[x][0].totalQuestions;
       let questions = results[x][1];
       payload.totalQuestions = totalQuestions;
       payload.questions = questions;
-      payload.topic = menuSelection;
+      payload.topic = topic;
       res.end();
     }
   }
@@ -38,8 +39,7 @@ router.post("/recordAnswer", function (req, res) {
 
   // ERROR HANDLING NEEDED HERE
   const data = fs.readFileSync(path.resolve(__dirname, "../questions.json"));
-
-  const topic = req.body.topic;
+  const { topic } = req.body;
   const questionIndex = parseInt(req.body.index);
   const chosenAnswer = parseInt(req.body.chosenAnswer) + 1;
 
@@ -74,6 +74,7 @@ function calculateScore(results, totalNumber) {
     }
   }
   let score = `${Math.round((numCorrect / totalNumber) * 100)}%`;
+  console.log(score);
 }
 
 // POPULATE DROPDOWN MENU

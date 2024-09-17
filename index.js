@@ -17,6 +17,11 @@ app.use(bodyParser.json());
 app.use(helmet());
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.locals.someValue = "my local value";
+  next();
+});
+
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
@@ -35,14 +40,14 @@ app.use(cookieParser());
 //   next();
 // });
 
-app.use((req, res, next) => {
-  if (req.query.message === "fail") {
-    res.locals.message = "Username or password are incorrect or do not exist. Please try again.";
-  } else {
-    res.locals.message = "";
-  }
-  next();
-});
+// app.use((req, res, next) => {
+//   if (req.query.message === "fail") {
+//     res.locals.message = "Username or password are incorrect or do not exist. Please try again.";
+//   } else {
+//     res.locals.message = "";
+//   }
+//   next();
+// });
 
 // SERVER
 var server = app.listen(8081, function () {

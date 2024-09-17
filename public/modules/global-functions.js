@@ -1,4 +1,3 @@
-// AVAILABLE TO TEMPLATES, NOT ROUTES
 function createNotification(message) {
   const notificationWrapper = document.createElement("div");
   const txt = document.createElement("span");

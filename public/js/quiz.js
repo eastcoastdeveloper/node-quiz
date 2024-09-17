@@ -49,7 +49,7 @@ async function recordAnswer(finalQuestion) {
         }
       });
   } catch (error) {
-    console.log(error);
+    console.error("There was a problem with the Fetch operation:", error);
   }
 }
 

@@ -87,9 +87,13 @@ import { createNotification, validateEmail } from "../modules/global-functions.j
       },
       body: JSON.stringify({ topic: menuSelection, email: emailValue }),
       cache: "default",
-    }).then((response) => {
-      response.ok ? window.location.assign("/guest/quiz") : createNotification("Something went wrong on our end.");
-    });
+    })
+      .then((response) => {
+        response.ok ? window.location.assign("/guest/quiz") : createNotification("Something went wrong on our end.");
+      })
+      .catch((err) => {
+        console.error("There was a problem with the Fetch operation:", error);
+      });
   }
 
   // POPULATE DROP DOWN MENU
@@ -101,6 +105,9 @@ import { createNotification, validateEmail } from "../modules/global-functions.j
       .then((arr) => {
         menuValue = arr;
         return menuValue;
+      })
+      .catch((err) => {
+        console.error("There was a problem with the Fetch operation:", error);
       });
   }
 
